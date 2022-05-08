@@ -32,7 +32,7 @@ namespace FirstMvcProject.Controllers
 
         public ActionResult GotoUpdateProduct()
         {
-            return RedirectToAction("UpdateProduct", "Product", new { id = 20 });
+            return RedirectToAction("UpdateProduct", "Product", new { Id = 20 });
         }
     }
 }

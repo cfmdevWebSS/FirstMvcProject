@@ -19,7 +19,7 @@ namespace FirstMvcProject.Controllers
             return View();
         }
 
-        public ActionResult UpdateProduct(int id)
+        public ActionResult UpdateProduct(int Id)
         {
             return View();
         }

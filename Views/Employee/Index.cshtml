@@ -3,6 +3,20 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/EmployeeLayout.cshtml";
 }
-
+@model List<FirstMvcProject.Models.Employee>
 <h2>Index</h2>
-
+<table border="1" cellpadding="3" cellspacing="3">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Salary</th>
+    </tr>
+    @foreach (var item in Model)
+     {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Salary</td>
+        </tr>
+     }
+</table>
