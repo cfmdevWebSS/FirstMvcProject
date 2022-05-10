@@ -1,11 +1,21 @@
-﻿
-<label>Id</label>
-<input type="number" name="Id" />
+﻿@model FirstMvcProject.Models.Employee
+@*<label>Id</label>
+    <input type="number" name="Id" value="@Model.Id" />
+    <br />
+    <label>Name</label>
+    <input type="text" name="Name" value="@Model.Name" />
+    <br />
+    <label>Salary</label>
+    <input type="number" name="Salary" @Model.Salary />
+    <br />*@
+
+@Html.LabelFor(x => x.Id)
+@Html.TextBoxFor(x => x.Id)
 <br />
-<label>Name</label>
-<input type="text" name="Name" />
+@Html.LabelFor(x => x.Name)
+@Html.TextBoxFor(x => x.Name)
 <br />
-<label>Salary</label>
-<input type="number" name="Salary" />
-<br />
+@Html.LabelFor(x => x.Salary)
+@Html.TextBoxFor(x => x.Salary)
 <button type="submit">Save</button>
+<br />

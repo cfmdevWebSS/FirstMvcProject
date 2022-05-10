@@ -26,6 +26,12 @@ namespace FirstMvcProject.Controllers
             return View(employeelist);
         }
 
+        public JsonResult GetDateWithJson()
+        {
+            string JsonDate = DateTime.Today.ToShortDateString();
+            return Json(JsonDate);
+        }
+
         public ActionResult AddEmployee()
         {
             Employee employee = new Employee();
@@ -34,12 +40,22 @@ namespace FirstMvcProject.Controllers
         [HttpPost]
         public ActionResult AddEmployee(Employee employee)
         {
-            return View();
+            return View(employee);
         }
 
         public ActionResult UpdateEmployee()
         {
-            return View();
+            var employee = new Employee();
+            employee.Id = 1;
+            employee.Name = "Baba O'reilly";
+            employee.Salary = 50000;
+            return View(employee);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateEmployee(Employee employee)
+        {
+            return View(employee);
         }
     }
 }

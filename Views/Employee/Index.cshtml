@@ -5,6 +5,8 @@
 }
 @model List<FirstMvcProject.Models.Employee>
 <h2>Index</h2>
+<span id="Date"></span>
+<input id="GetDateWithJson" type="submit" value="Get Date" />
 <table border="1" cellpadding="3" cellspacing="3">
     <tr>
         <th>Id</th>
@@ -20,3 +22,19 @@
         </tr>
      }
 </table>
+<script src="~/Content/jquery-3.6.0.js"></script>
+<script>
+    $(function () {
+        $("#GetDateWithJson").click(
+            function () {
+                $.ajax({
+                    url: "@Url.Action("GetDateWithJson", "Employee")",
+                    type: "POST",
+                    success: function (result) {
+                        $("#Date").html(result);
+                    }
+                });
+            }
+        );
+    });
+</script>
