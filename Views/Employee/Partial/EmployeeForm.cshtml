@@ -11,11 +11,14 @@
 
 @Html.LabelFor(x => x.Id)
 @Html.TextBoxFor(x => x.Id)
+@Html.ValidationMessageFor(x => x.Id)
 <br />
 @Html.LabelFor(x => x.Name)
 @Html.TextBoxFor(x => x.Name)
+@Html.ValidationMessageFor(x => x.Name)
 <br />
 @Html.LabelFor(x => x.Salary)
 @Html.TextBoxFor(x => x.Salary)
+@Html.ValidationMessageFor(x => x.Salary)
 <button type="submit">Save</button>
 <br />

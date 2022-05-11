@@ -23,6 +23,10 @@ namespace FirstMvcProject.Controllers
             emp2.Name = "Joe Gotcha";
             emp2.Salary = 99000;
             employeelist.Add(emp2);
+            ViewData["Age"] = 20;
+            ViewBag.Job = "Engineer";
+            string company2 = "N.F.String";
+            TempData["company"] = company2;
             return View(employeelist);
         }
 
@@ -40,6 +44,15 @@ namespace FirstMvcProject.Controllers
         [HttpPost]
         public ActionResult AddEmployee(Employee employee)
         {
+            string textvalue = "";
+            if (ModelState.IsValid)
+            {
+                textvalue = "Model State is valid";
+            }
+            else 
+            {
+                textvalue = "Model State is NOT valid";
+            }
             return View(employee);
         }
 
@@ -47,7 +60,8 @@ namespace FirstMvcProject.Controllers
         {
             var employee = new Employee();
             employee.Id = 1;
-            employee.Name = "Baba O'reilly";
+            string company = (string)TempData["company"];
+            employee.Name = company;
             employee.Salary = 50000;
             return View(employee);
         }
