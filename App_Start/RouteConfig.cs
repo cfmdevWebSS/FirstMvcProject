@@ -12,6 +12,25 @@ namespace FirstMvcProject
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.MapRoute(
+                name: "Home",
+                url:  "", 
+                defaults: new {controller = "Employee", action = "index"}
+            );
+
+            routes.MapMvcAttributeRoutes();
+
+            routes.MapRoute(
+                name: "Category",
+                url: "{Title}",
+                defaults: new { controller = "Category", action = "Index", id = UrlParameter.Optional}
+            );
+
+            routes.MapRoute(
+                name: "Detail",
+                url: "{Title}/{DetailName}",
+                defaults: new { controller = "Category", action = "Detail", id = UrlParameter.Optional, @DetailName = UrlParameter.Optional }
+            );
 
             routes.MapRoute(
                 name: "Default",

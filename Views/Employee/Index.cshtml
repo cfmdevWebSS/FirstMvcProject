@@ -12,6 +12,10 @@
 <p>Age=@ViewData["Age"]</p>
 <br />
 <p>Job=@ViewBag.Job</p>
+<br />
+<a href="@Url.RouteUrl("Category", new {@Title = "Programming"})"><strong>Category</strong></a>
+<br />
+<a href="@Url.RouteUrl("Detail", new {@Title = "Programming", @DetailName = "C# programming"})"><strong>Detail Page</strong></a>
 <table border="1" cellpadding="3" cellspacing="3">
     <tr>
         <th>Id</th>
@@ -19,13 +23,13 @@
         <th>Salary</th>
     </tr>
     @foreach (var item in Model)
-     {
+    {
         <tr>
             <td>@item.Id</td>
             <td>@item.Name</td>
             <td>@item.Salary</td>
         </tr>
-     }
+    }
 </table>
 <script src="~/Content/jquery-3.6.0.js"></script>
 <script>
